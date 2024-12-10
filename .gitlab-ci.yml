@@ -1,7 +1,11 @@
 build:
-  image: docker:24.0.5
-  services:
-    - docker:24.0.5-dind
+  image:
+    name: pandoc/extra:edge-ubuntu
+    entrypoint: [""]
   script:
-    - docker info
-    - docker build .
+    - mkdir public
+    - /usr/local/bin/pandoc --from gfm --to html --standalone -o ./public/index.html ./README.md
+  artifacts:
+    paths:
+      - public
+  pages: true
