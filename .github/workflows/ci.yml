@@ -14,3 +14,7 @@ jobs:
       - run: |
           mkdir ./output
           /usr/local/bin/pandoc --from gfm --to html --standalone -o ./output/index.html ./README.md
+      - name: Upload static files as artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./output/
