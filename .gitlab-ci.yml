@@ -9,3 +9,4 @@ build:
     paths:
       - output
   pages: true
+  publish: output
