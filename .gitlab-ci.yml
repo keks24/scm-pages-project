@@ -3,9 +3,9 @@ build:
     name: pandoc/extra:edge-ubuntu
     entrypoint: [""]
   script:
-    - mkdir public
-    - /usr/local/bin/pandoc --from gfm --to html --standalone -o ./public/index.html ./README.md
+    - mkdir output
+    - /usr/local/bin/pandoc --from gfm --to html --standalone -o ./output/index.html ./README.md
   artifacts:
     paths:
-      - public
+      - output
   pages: true
